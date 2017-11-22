@@ -8,7 +8,7 @@
 ---------------------------------------------------------------------------------
 # install.packages('caTools')
 library(caTools)
-set.seed(123)
+
 # install.packages('ElemStatLearn')
 library(ElemStatLearn)
 
@@ -23,7 +23,7 @@ dataset = dataset[3:5]
 dataset$Purchased = factor(dataset$Purchased, levels = c(0, 1))
 
          #2(c) Splitting the dataset into the Training set and Test set
-
+set.seed(123)
 split = sample.split(dataset$Purchased, SplitRatio = 0.75)
 training_set = subset(dataset, split == TRUE)
 test_set = subset(dataset, split == FALSE)
